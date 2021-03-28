@@ -65,20 +65,20 @@
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\floatsep}{0pt}
 
-\author[Kyra Matt Andrea]{%
+\author[Kyra]{%
 \LARGE Kyra Wulffert \\
-\LARGE Matthew Treinish \\
-\LARGE Andrea Frittoli \\
+% \LARGE Matthew Treinish \\
+% \LARGE Andrea Frittoli \\
 }
 
 % \LARGE Kyra Wulffert \Large{kwulffert@gmail.com} \\
 % \LARGE Matthew Treinish \Large{mtreinish@kortar.org} \\
 % \LARGE Andrea Frittoli \Large{andrea.frittoli@gmail.com} \\
 
-\date{June 2, 2020}
+\date{March 31, 2021}
 \title{Machine Learning for CI}
-\institute[JNation]{%
-JNation 2020
+\institute[WiDS]{%
+Women in Data Science Bristol 2021
 }
 
 \usetheme{ibmcloud}
@@ -104,22 +104,22 @@ JNation 2020
     \em{kwulffert@gmail.com} \\
   \end{centering}
   }
-  {
-  %\vspace{0.2\textheight}
-  \begin{centering}
-    \includegraphics[width=0.8\textwidth]{img/mt.jpg} \\
-    Matthew Treinish \\
-    \em{mtreinish@kortar.org} \\
-  \end{centering}
-  }
-  {
-  %\vspace{0.2\textheight}
-  \begin{centering}
-    \includegraphics[width=0.8\textwidth]{img/af.jpg} \\
-    Andrea Frittoli \\
-    \em{andrea.frittoli@gmail.com} \\
-  \end{centering}
-  }
+  % {
+  % %\vspace{0.2\textheight}
+  % \begin{centering}
+  %   \includegraphics[width=0.8\textwidth]{img/mt.jpg} \\
+  %   Matthew Treinish \\
+  %   \em{mtreinish@kortar.org} \\
+  % \end{centering}
+  % }
+  % {
+  % %\vspace{0.2\textheight}
+  % \begin{centering}
+  %   \includegraphics[width=0.8\textwidth]{img/af.jpg} \\
+  %   Andrea Frittoli \\
+  %   \em{andrea.frittoli@gmail.com} \\
+  % \end{centering}
+  % }
   \frametitle{The Team}
 \end{3columnsframe}
 
@@ -296,28 +296,28 @@ JNation 2020
      \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Building the dataset}
-    % Dev is not used for dev, but for further evaluation and metrics report
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{figure}
-        \begin{center}
-          \includegraphics[width=0.9\textwidth]{diagrams/dataset.png}
-             \caption{Structure of a dataset}
-             % NOTE: the term "labels" is overloaded. In this case we mean the names of the features, like 'usr1', 'usr2' etc
-        \end{center}
-        \end{figure}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Split in training, dev, test}
-            \item{Obtain classes}
-            \item{Store normalized data on s3}
-            \item{Input function for training}
-            \item{Input function for evaluation}
-        \end{itemize}
-    \end{columns}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Building the dataset}
+%     % Dev is not used for dev, but for further evaluation and metrics report
+%     \begin{columns}
+%       \column{0.5\linewidth}
+%         \begin{figure}
+%         \begin{center}
+%           \includegraphics[width=0.9\textwidth]{diagrams/dataset.png}
+%              \caption{Structure of a dataset}
+%              % NOTE: the term "labels" is overloaded. In this case we mean the names of the features, like 'usr1', 'usr2' etc
+%         \end{center}
+%         \end{figure}
+%       \column{0.5\linewidth}
+%         \begin{itemize}
+%             \item{Split in training, dev, test}
+%             \item{Obtain classes}
+%             \item{Store normalized data on s3}
+%             \item{Input function for training}
+%             \item{Input function for evaluation}
+%         \end{itemize}
+%     \end{columns}
+% \end{frame}
 
 % \section{Data Pipelines} %
 % \section{Data Pipelines}
@@ -1045,20 +1045,21 @@ JNation 2020
       \item{Unsupervised learning techniques on system data}
       \item{Collect data}
       \item{Know your data}
+      \item{High quality data}
       \item{Work with cloud tools}
       \item{Use different ML tools}
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Future Work}
-  \begin{itemize}
-    \item{Explore interpretability of binary and multi classification models}
-    \item{Extend dataset to include system/application logs}
-    \item{Explore clustering of failed CI jobs}
-    \item{Explore CI job portability}
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Future Work}
+%   \begin{itemize}
+%     \item{Explore interpretability of binary and multi classification models}
+%     \item{Extend dataset to include system/application logs}
+%     \item{Explore clustering of failed CI jobs}
+%     \item{Explore CI job portability}
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}
   \frametitle{Questions?}
@@ -1067,8 +1068,8 @@ JNation 2020
     \item{CIML: \href{https://github.com/mtreinish/ciml}{https://github.com/mtreinish/ciml}}
   \end{itemize}
   \begin{itemize}
-    \item Kyra Wulffert \raisebox{-.2\height}{\includegraphics[width=12pt]{img/twitter.png}} \href{https://twitter.com/kwulffert/}{@kwulffert} \raisebox{-.2\height}{\includegraphics[width=14pt]{img/linkedin.png}} \href{https://www.linkedin.com/in/kyrawulffert/}{kyrawulffert}
-    \item Andrea Frittoli \raisebox{-.2\height}{\includegraphics[width=12pt]{img/twitter.png}} \href{https://twitter.com/blackchip76}{@blackchip76} \raisebox{-.2\height}{\includegraphics[width=14pt]{img/linkedin.png}} \href{https://www.linkedin.com/in/andreafrittoli/}{andreafrittoli}
+    \item Kyra Wulffert \raisebox{-.2\height}{\includegraphics[width=12pt]{img/twitter.png}} \href{https://github.com/kwulffert/}{@kwulffert} \raisebox{-.2\height}{\includegraphics[width=14pt]{img/linkedin.png}} \href{https://www.linkedin.com/in/kyrawulffert/}{kyrawulffert}
+    % \item Andrea Frittoli \raisebox{-.2\height}{\includegraphics[width=12pt]{img/twitter.png}} \href{https://twitter.com/blackchip76}{@blackchip76} \raisebox{-.2\height}{\includegraphics[width=14pt]{img/linkedin.png}} \href{https://www.linkedin.com/in/andreafrittoli/}{andreafrittoli}
   \end{itemize}
 
 \end{frame}
