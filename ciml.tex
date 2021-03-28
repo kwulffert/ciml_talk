@@ -72,7 +72,7 @@
 % \LARGE Matthew Treinish \Large{mtreinish@kortar.org} \\
 % \LARGE Andrea Frittoli \Large{andrea.frittoli@gmail.com} \\
 
-\date[31 March 2021]{31 March 2021 | \faGithub ~afrittoli}
+\date[31 March 2021]{31 March 2021 | \faGithub ~kwulffert}
 \title{Machine Learning for CI}
 \institute[WiDS]{%
 Women in Data Science Bristol 2021
@@ -515,49 +515,49 @@ Women in Data Science Bristol 2021
   \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{DNN - Binary Classification - Metrics report}
-    \begin{columns}
-      \column{0.5\linewidth}
-%Add metric report for usr,1m,1min and usr,1m,10s
-      \begin{table}[h!]
-        \begin{center}
-          \caption{Metrics report for usr\,1m and 1min}
-          %\label{Metrics report for usr_1m-10s}
-          \resizebox{0.6\linewidth}{!}{
-            \pgfplotstabletypeset[
-              every head row/.style={after row=\midrule},
-              columns/status/.style={string type},
-              every row no 1/.style={after row=\midrule},
-            ]{code/metrics_report_binary_1min.csv}
-          }
-        \end{center}
-      \end{table}
-
-      \begin{figure}
-        \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/confusion_plots/usr_1m-1min-statusdnn-5x100-500epochs-bs128.png}
-      \end{figure}
-      \column{0.5\linewidth}
-      \begin{table}[h!]
-        \begin{center}
-          \caption{Metrics report for usr\,1m and 10s}
-      %    \label{unrolled_sample}
-          \resizebox{0.6\linewidth}{!}{
-            \pgfplotstabletypeset[
-              every head row/.style={after row=\midrule},
-              columns/status/.style={string type},
-              every row no 1/.style={after row=\midrule},
-              ]{code/metrics_report_binary_10s.csv}
-          }
-      \end{center}
-      \end{table}
-        \begin{center}
-          \begin{figure}
-            \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/confusion_plots/usr_1m-10s-statusdnn-5x100-500epochs-bs128.png}
-          \end{figure}
-        \end{center}
-  \end{columns}
-\end{frame}
+% \begin{frame}
+%     \frametitle{DNN - Binary Classification - Metrics report}
+%     \begin{columns}
+%       \column{0.5\linewidth}
+% %Add metric report for usr,1m,1min and usr,1m,10s
+%       \begin{table}[h!]
+%         \begin{center}
+%           \caption{Metrics report for usr\,1m and 1min}
+%           %\label{Metrics report for usr_1m-10s}
+%           \resizebox{0.6\linewidth}{!}{
+%             \pgfplotstabletypeset[
+%               every head row/.style={after row=\midrule},
+%               columns/status/.style={string type},
+%               every row no 1/.style={after row=\midrule},
+%             ]{code/metrics_report_binary_1min.csv}
+%           }
+%         \end{center}
+%       \end{table}
+%
+%       \begin{figure}
+%         \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/confusion_plots/usr_1m-1min-statusdnn-5x100-500epochs-bs128.png}
+%       \end{figure}
+%       \column{0.5\linewidth}
+%       \begin{table}[h!]
+%         \begin{center}
+%           \caption{Metrics report for usr\,1m and 10s}
+%       %    \label{unrolled_sample}
+%           \resizebox{0.6\linewidth}{!}{
+%             \pgfplotstabletypeset[
+%               every head row/.style={after row=\midrule},
+%               columns/status/.style={string type},
+%               every row no 1/.style={after row=\midrule},
+%               ]{code/metrics_report_binary_10s.csv}
+%           }
+%       \end{center}
+%       \end{table}
+%         \begin{center}
+%           \begin{figure}
+%             \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/confusion_plots/usr_1m-10s-statusdnn-5x100-500epochs-bs128.png}
+%           \end{figure}
+%         \end{center}
+%   \end{columns}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Changing test job}
@@ -1061,11 +1061,11 @@ Women in Data Science Bristol 2021
 \begin{frame}
   \frametitle{Questions?}
   \begin{itemize}
-    \item{This talk: \href{https://github.com/afrittoli/ciml\_talk}{https://github.com/afrittoli/ciml\_talk}}
+    \item{This talk: \href{https://github.com/kwulffert/ciml\_talk}{https://github.com/kwulffert/ciml\_talk}}
     \item{CIML: \href{https://github.com/mtreinish/ciml}{https://github.com/mtreinish/ciml}}
   \end{itemize}
   \begin{itemize}
-    \item Kyra Wulffert \raisebox{-.2\height}{\includegraphics[width=12pt]{img/twitter.png}} \href{https://github.com/kwulffert/}{@kwulffert} \raisebox{-.2\height}{\includegraphics[width=14pt]{img/linkedin.png}} \href{https://www.linkedin.com/in/kyrawulffert/}{kyrawulffert}
+    \item Kyra Wulffert \faGithub \href{https://github.com/kwulffert/}{kwulffert} \faLinkedin \href{https://www.linkedin.com/in/kyrawulffert/}{kyrawulffert}
     % \item Andrea Frittoli \raisebox{-.2\height}{\includegraphics[width=12pt]{img/twitter.png}} \href{https://twitter.com/blackchip76}{@blackchip76} \raisebox{-.2\height}{\includegraphics[width=14pt]{img/linkedin.png}} \href{https://www.linkedin.com/in/andreafrittoli/}{andreafrittoli}
   \end{itemize}
 
