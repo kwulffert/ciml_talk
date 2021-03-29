@@ -143,7 +143,7 @@
           \item{Continuous Log Data}
           \item{Lots of data, little time}
           \item{Triaging failures?}
-          \item{AI to the rescue!}
+          \item{ML to the rescue!}
       \end{itemize}
   \end{columns}
 \end{frame}
@@ -185,7 +185,7 @@
             \item{Automation and repeatability}
             \item{Light-weight data validation}
             \item{Object storage for data}
-            \item{Periodic Action on OpenWhisk}
+            % \item{Periodic Action on OpenWhisk}
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -484,38 +484,38 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{DNN - Binary Classification}
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Selecting the data resolution}
-            \item{Primary metric: accuracy}
-            \item{Aim for lower loss, caveat: overfitting}
-            \item{Note: careful with NaN after down-sampling}
-            % On a pandas dataset, out.dropna() to remove any NaN. We cannot trust data to be 100% clean all the time, if there are missing sample they may cause NaN
-            \item{Key:}
-            \begin{itemize}
-              \item{Original data frequency: 1s}
-              \item{x-axis: new sampling rate}
-              \item{Features: (\textbf{usr}, \textbf{1m})}
-              \item{Source: TensorFlow evaluation}
-            \end{itemize}
-            \item{Winner: \textbf{10s}}
-            \item{Accuracy achieved: \emph{\textbf{0.993}}}
-            \item{6 mistakes on a 791 test set}
-        \end{itemize}
-      \column{0.5\linewidth}
-        \begin{center}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_sampling-status.png}
-        \end{figure}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_sampling-status.png}
-        \end{figure}
-      \end{center}
-  \end{columns}
-\end{frame}
+% \begin{frame}
+%     \frametitle{DNN - Binary Classification}
+%     \begin{columns}
+%       \column{0.5\linewidth}
+%         \begin{itemize}
+%             \item{Selecting the data resolution}
+%             \item{Primary metric: accuracy}
+%             \item{Aim for lower loss, caveat: overfitting}
+%             \item{Note: careful with NaN after down-sampling}
+%             % On a pandas dataset, out.dropna() to remove any NaN. We cannot trust data to be 100% clean all the time, if there are missing sample they may cause NaN
+%             \item{Key:}
+%             \begin{itemize}
+%               \item{Original data frequency: 1s}
+%               \item{x-axis: new sampling rate}
+%               \item{Features: (\textbf{usr}, \textbf{1m})}
+%               \item{Source: TensorFlow evaluation}
+%             \end{itemize}
+%             \item{Winner: \textbf{10s}}
+%             \item{Accuracy achieved: \emph{\textbf{0.993}}}
+%             \item{6 mistakes on a 791 test set}
+%         \end{itemize}
+%       \column{0.5\linewidth}
+%         \begin{center}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_sampling-status.png}
+%         \end{figure}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_sampling-status.png}
+%         \end{figure}
+%       \end{center}
+%   \end{columns}
+% \end{frame}
 
 % \begin{frame}
 %     \frametitle{DNN - Binary Classification - Metrics report}
@@ -561,42 +561,42 @@
 %   \end{columns}
 % \end{frame}
 
-\begin{frame}
-    \frametitle{Changing test job}
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{table}[h!]
-          \begin{center}
-            \label{binary_eval_compare}
-            % Update accuracy to match previous slides
-            \resizebox{1\linewidth}{!}{
-              \pgfplotstabletypeset[
-                precision=3,
-                columns/metric/.style={string type},
-                every head row/.style={after row=\midrule},
-                every even row={5}{before row=\rowcolor{mygray}},
-              ]{code/usr_1m-10s-status-eval-compare.csv}
-            }
-          \end{center}
-       \end{table}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Train with "tempest-full"}
-            \item{Evaluating with "tempest-full-py3"}
-            \begin{itemize}
-              \item{Similar setup, uses python3}
-              \item{It does not include swift and swift tests}
-              \item{600 examples evaluation set}
-            \end{itemize}
-            \item{Dataset and training setup:}
-            \begin{itemize}
-              \item{Features: (usr, 1m)}
-              \item{Resolution: 1min}
-              \item{Same hyper-parameters}
-            \end{itemize}
-        \end{itemize}
-    \end{columns}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Changing test job}
+%     \begin{columns}
+%       \column{0.5\linewidth}
+%         \begin{table}[h!]
+%           \begin{center}
+%             \label{binary_eval_compare}
+%             % Update accuracy to match previous slides
+%             \resizebox{1\linewidth}{!}{
+%               \pgfplotstabletypeset[
+%                 precision=3,
+%                 columns/metric/.style={string type},
+%                 every head row/.style={after row=\midrule},
+%                 every even row={5}{before row=\rowcolor{mygray}},
+%               ]{code/usr_1m-10s-status-eval-compare.csv}
+%             }
+%           \end{center}
+%        \end{table}
+%       \column{0.5\linewidth}
+%         \begin{itemize}
+%             \item{Train with "tempest-full"}
+%             \item{Evaluating with "tempest-full-py3"}
+%             \begin{itemize}
+%               \item{Similar setup, uses python3}
+%               \item{It does not include swift and swift tests}
+%               \item{600 examples evaluation set}
+%             \end{itemize}
+%             \item{Dataset and training setup:}
+%             \begin{itemize}
+%               \item{Features: (usr, 1m)}
+%               \item{Resolution: 1min}
+%               \item{Same hyper-parameters}
+%             \end{itemize}
+%         \end{itemize}
+%     \end{columns}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Binary Classification - Summary}
@@ -675,98 +675,98 @@
       \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Multi Class - Different Features}
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Try different combinations of features}
-            \item{Primary metric: accuracy}
-            \item{Aim for lower loss, caveat: overfitting}
-            \item{Key:}
-            \begin{itemize}
-              \item{\textbf{usr}: User CPU}
-              \item{\textbf{used}: Used Memory}
-              \item{\textbf{1m}: System Load - 1min Average}
-              \item{Data Resolution: \textbf{1min}}
-              \item{Source: TensorFlow evaluation output}
-            \end{itemize}
-            \item{No real improvement}
-            \item{Best accuracy achieved: \emph{\textbf{0.603}}}
-            \item{Adding Disk I/O or process data does not help either}
-        \end{itemize}
-      \column{0.5\linewidth}
-        \begin{center}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_feature-node_provider_all.png}
-        \end{figure}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_feature-node_provider_all.png}
-        \end{figure}
-      \end{center}
-  \end{columns}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Multi Class - Different Features}
+%     \begin{columns}
+%       \column{0.5\linewidth}
+%         \begin{itemize}
+%             \item{Try different combinations of features}
+%             \item{Primary metric: accuracy}
+%             \item{Aim for lower loss, caveat: overfitting}
+%             \item{Key:}
+%             \begin{itemize}
+%               \item{\textbf{usr}: User CPU}
+%               \item{\textbf{used}: Used Memory}
+%               \item{\textbf{1m}: System Load - 1min Average}
+%               \item{Data Resolution: \textbf{1min}}
+%               \item{Source: TensorFlow evaluation output}
+%             \end{itemize}
+%             \item{No real improvement}
+%             \item{Best accuracy achieved: \emph{\textbf{0.603}}}
+%             \item{Adding Disk I/O or process data does not help either}
+%         \end{itemize}
+%       \column{0.5\linewidth}
+%         \begin{center}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_feature-node_provider_all.png}
+%         \end{figure}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_feature-node_provider_all.png}
+%         \end{figure}
+%       \end{center}
+%   \end{columns}
+% \end{frame}
+%
+% \begin{frame}
+%     \frametitle{Multi Class - Changing Resolution}
+%     \begin{columns}
+%       \column{0.5\linewidth}
+%         \begin{itemize}
+%             \item{Trying to change the data resolution}
+%             \item{Primary metric: accuracy}
+%             \item{Aim for lower loss, caveat: overfitting}
+%             \item{Key:}
+%             \begin{itemize}
+%               \item{Original data frequency: 1s}
+%               \item{x-axis: new sampling rate}
+%               \item{Features: (\textbf{usr}, \textbf{1m})}
+%               \item{Source: TensorFlow evaluation}
+%             \end{itemize}
+%             \item{No real improvement}
+%             \item{Best accuracy achieved: \emph{\textbf{0.624}}}
+%         \end{itemize}
+%       \column{0.5\linewidth}
+%         \begin{center}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_sampling-node_provider_all.png}
+%         \end{figure}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_sampling-node_provider_all.png}
+%         \end{figure}
+%       \end{center}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}
-    \frametitle{Multi Class - Changing Resolution}
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Trying to change the data resolution}
-            \item{Primary metric: accuracy}
-            \item{Aim for lower loss, caveat: overfitting}
-            \item{Key:}
-            \begin{itemize}
-              \item{Original data frequency: 1s}
-              \item{x-axis: new sampling rate}
-              \item{Features: (\textbf{usr}, \textbf{1m})}
-              \item{Source: TensorFlow evaluation}
-            \end{itemize}
-            \item{No real improvement}
-            \item{Best accuracy achieved: \emph{\textbf{0.624}}}
-        \end{itemize}
-      \column{0.5\linewidth}
-        \begin{center}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_sampling-node_provider_all.png}
-        \end{figure}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_sampling-node_provider_all.png}
-        \end{figure}
-      \end{center}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Multi Class - Network topology}
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Trying to change the network depth}
-            \item{Trying to change number of units per layer}
-            \item{Primary metric: accuracy}
-            \item{Aim for lower loss, caveat: overfitting}
-            \item{Key:}
-            \begin{itemize}
-              \item{x-axis: units and hidden layers}
-              \item{Features: (\textbf{usr}, \textbf{1m})}
-              \item{Resolution: \textbf{1min}}
-              \item{Source: TensorFlow evaluation}
-            \end{itemize}
-            \item{No real improvement}
-            \item{Best accuracy achieved: \emph{\textbf{0.668}}}
-        \end{itemize}
-      \column{0.5\linewidth}
-        \begin{center}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_topology-node_provider_all.png}
-        \end{figure}
-        \begin{figure}
-          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_topology-node_provider_all.png}
-        \end{figure}
-      \end{center}
-  \end{columns}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Multi Class - Network topology}
+%     \begin{columns}
+%       \column{0.5\linewidth}
+%         \begin{itemize}
+%             \item{Trying to change the network depth}
+%             \item{Trying to change number of units per layer}
+%             \item{Primary metric: accuracy}
+%             \item{Aim for lower loss, caveat: overfitting}
+%             \item{Key:}
+%             \begin{itemize}
+%               \item{x-axis: units and hidden layers}
+%               \item{Features: (\textbf{usr}, \textbf{1m})}
+%               \item{Resolution: \textbf{1min}}
+%               \item{Source: TensorFlow evaluation}
+%             \end{itemize}
+%             \item{No real improvement}
+%             \item{Best accuracy achieved: \emph{\textbf{0.668}}}
+%         \end{itemize}
+%       \column{0.5\linewidth}
+%         \begin{center}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_topology-node_provider_all.png}
+%         \end{figure}
+%         \begin{figure}
+%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_topology-node_provider_all.png}
+%         \end{figure}
+%       \end{center}
+%   \end{columns}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Multi Class - Reducing the number of classes}
