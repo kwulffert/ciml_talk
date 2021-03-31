@@ -620,92 +620,92 @@
       \end{columns}
 \end{frame}
 
-\begin{frame}
-    \frametitle{DNN - Multi Class}
-    \begin{columns}
-      \column{0.5\linewidth}
-        \begin{itemize}
-            \item{Classes: Hosting Cloud Provider}
-            \item{Supervised training}
-            \item{TensorFlow \emph{DNNClassifier}, classes=\textbf{10}}
-            \item{Dataset:}
-            \begin{itemize}
-              \item{CI Job "tempest-full"}
-              \item{Gate pipeline only}
-              \item{3000 examples, 2100 training, 900 test}
-            \end{itemize}
-            \item{Hyper-parameters:}
-            \begin{itemize}
-              \item{Activation function: ReLU}
-              \item{Output layer: Sigmoid}
-              \item{Optimizer: Adagrad}
-              \item{Learning rate (initial): 0.05}
-              \item{5 hidden layers, 100 units per layer}
-              \item{Batch Size: 128, Epochs: 500}
-            \end{itemize}
-        \end{itemize}
-      \column{0.5\linewidth}
-        \begin{figure}
-        \begin{center}
-          \includegraphics[width=0.9\textwidth]{diagrams/binary_class_network_diagram.png}
-             \caption{Network Graph - Source: TensorBoard}
-        \end{center}
-        \end{figure}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{DNN - Multi Class}
-    \begin{columns}
-      \column{0.4\linewidth}
-        \begin{itemize}
-          \item{Features: (usr, 1m)}
-          \item{Resolution: 1min}
-          \item{Loss converges, but...}
-          \item{Evaluation accuracy achieved: \emph{\textbf{0.601}}}
-          \item{Not good!}
-        \end{itemize}
-      \column{0.6\linewidth}
-        \begin{figure}
-          \begin{center}
-            \includegraphics[width=0.9\textwidth,height=0.5\textheight]{graphs/cpu_1m-1min-node_provider_all_loss_curve.png}
-              \caption{Training Loss - usr/1m, 1min - Source: TensorBoard}
-          \end{center}
-        \end{figure}
-      \end{columns}
-\end{frame}
-
 % \begin{frame}
-%     \frametitle{Multi Class - Different Features}
+%     \frametitle{DNN - Multi Class}
 %     \begin{columns}
 %       \column{0.5\linewidth}
 %         \begin{itemize}
-%             \item{Try different combinations of features}
-%             \item{Primary metric: accuracy}
-%             \item{Aim for lower loss, caveat: overfitting}
-%             \item{Key:}
+%             \item{Classes: Hosting Cloud Provider}
+%             \item{Supervised training}
+%             \item{TensorFlow \emph{DNNClassifier}, classes=\textbf{10}}
+%             \item{Dataset:}
 %             \begin{itemize}
-%               \item{\textbf{usr}: User CPU}
-%               \item{\textbf{used}: Used Memory}
-%               \item{\textbf{1m}: System Load - 1min Average}
-%               \item{Data Resolution: \textbf{1min}}
-%               \item{Source: TensorFlow evaluation output}
+%               \item{CI Job "tempest-full"}
+%               \item{Gate pipeline only}
+%               \item{3000 examples, 2100 training, 900 test}
 %             \end{itemize}
-%             \item{No real improvement}
-%             \item{Best accuracy achieved: \emph{\textbf{0.603}}}
-%             \item{Adding Disk I/O or process data does not help either}
+%             \item{Hyper-parameters:}
+%             \begin{itemize}
+%               \item{Activation function: ReLU}
+%               \item{Output layer: Sigmoid}
+%               \item{Optimizer: Adagrad}
+%               \item{Learning rate (initial): 0.05}
+%               \item{5 hidden layers, 100 units per layer}
+%               \item{Batch Size: 128, Epochs: 500}
+%             \end{itemize}
 %         \end{itemize}
 %       \column{0.5\linewidth}
+%         \begin{figure}
 %         \begin{center}
-%         \begin{figure}
-%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_feature-node_provider_all.png}
+%           \includegraphics[width=0.9\textwidth]{diagrams/binary_class_network_diagram.png}
+%              \caption{Network Graph - Source: TensorBoard}
+%         \end{center}
 %         \end{figure}
-%         \begin{figure}
-%           \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_feature-node_provider_all.png}
-%         \end{figure}
-%       \end{center}
-%   \end{columns}
+%     \end{columns}
 % \end{frame}
+
+% \begin{frame}
+%     \frametitle{DNN - Multi Class}
+%     \begin{columns}
+%       \column{0.4\linewidth}
+%         \begin{itemize}
+%           \item{Features: (usr, 1m)}
+%           \item{Resolution: 1min}
+%           \item{Loss converges, but...}
+%           \item{Evaluation accuracy achieved: \emph{\textbf{0.601}}}
+%           \item{Not good!}
+%         \end{itemize}
+%       \column{0.6\linewidth}
+%         \begin{figure}
+%           \begin{center}
+%             \includegraphics[width=0.9\textwidth,height=0.5\textheight]{graphs/cpu_1m-1min-node_provider_all_loss_curve.png}
+%               \caption{Training Loss - usr/1m, 1min - Source: TensorBoard}
+%           \end{center}
+%         \end{figure}
+%       \end{columns}
+% \end{frame}
+
+\begin{frame}
+    \frametitle{Multi Class - Different Features}
+    \begin{columns}
+      \column{0.5\linewidth}
+        \begin{itemize}
+            \item{Try different combinations of features}
+            \item{Primary metric: accuracy}
+            \item{Aim for lower loss, caveat: overfitting}
+            \item{Key:}
+            \begin{itemize}
+              \item{\textbf{usr}: User CPU}
+              \item{\textbf{used}: Used Memory}
+              \item{\textbf{1m}: System Load - 1min Average}
+              \item{Data Resolution: \textbf{1min}}
+              \item{Source: TensorFlow evaluation output}
+            \end{itemize}
+            \item{No real improvement}
+            \item{Best accuracy achieved: \emph{\textbf{0.603}}}
+            \item{Adding Disk I/O or process data does not help either}
+        \end{itemize}
+      \column{0.5\linewidth}
+        \begin{center}
+        \begin{figure}
+          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/accuracy_by_feature-node_provider_all.png}
+        \end{figure}
+        \begin{figure}
+          \includegraphics[width=0.8\textwidth,height=0.4\textheight]{graphs/loss_by_feature-node_provider_all.png}
+        \end{figure}
+      \end{center}
+  \end{columns}
+\end{frame}
 %
 % \begin{frame}
 %     \frametitle{Multi Class - Changing Resolution}
